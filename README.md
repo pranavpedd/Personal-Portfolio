@@ -1,4 +1,4 @@
 # Personal Portfolio Website
 
-By: Pranav Peddamalla
+By: Pranav Peddamalla  
 (Pic of home page and info goes here)
