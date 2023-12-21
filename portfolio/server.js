@@ -15,7 +15,7 @@ app.set('views', path.resolve(__dirname, 'templates'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
-app.use(favicon(path.join(__dirname, 'public/images', 'letter p icon.ico')));
+app.use(favicon(path.join(__dirname, 'public/images', 'golden p.png')));
 
 // rendering pages
 app.get('/', (req, res) => {

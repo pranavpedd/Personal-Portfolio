@@ -16,12 +16,6 @@
       src: url('fonts/CircularStd-Black.woff') format('woff');
     }
 
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -46,9 +40,8 @@
       font-size: 70px;
       margin-right: 100px;
       margin-bottom: 10px;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: blink 1s step-end infinite;
+      transform: translateY(-100px);
+      animation: fadeInUp 2s forwards;
     }
 
     #headshot {
@@ -64,8 +57,8 @@
       margin-right: 100px;
       margin-top: 0px;
       opacity: 0;
-      transform: translateY(100px);
-      animation: fadeInUp 2s forwards;
+      transform: translateY(500px);
+      animation: fadeInUp 3s forwards;
     }
 
     #text-group {
@@ -104,6 +97,18 @@
       left: 0;
       z-index: 1000;
     }
+
+    #footer hr {
+      margin-top: 7%;
+      border-color: grey;
+      width: 90%;
+    }
+
+    #copyright {
+      color: grey;
+      text-align: center;
+      font-family: 'CircularStd-Book';
+    }
   </style>
 </head>
 
@@ -118,25 +123,15 @@
   </div>
   <div id="main-page">
     <div id="text-group">
-      <h1 id="intro"></h1>
+      <h1 id="intro">hey i'm pranav!</h1>
       <h4 id="aspire">Aspiring Software Engineer/Data Scientist</h4>
     </div>
     <img id="headshot" src="/images/headshot better.jpg" alt="pic of me">
   </div>
-  <script>
-    const text = "hey i'm pranav!";
-    const elem = document.getElementById('intro');
-    let idx = 0;
-    function animate() {
-      if (idx < text.length) {
-        elem.innerHTML += text.charAt(idx);
-        idx++;
-        setTimeout(animate, 90);
-      }
-    }
-
-    animate();
-  </script>
+  <div id="footer">
+    <hr>
+    <p id="copyright">©2023 Pranav Peddamalla</p>
+  </div>
 </body>
 
 </html>
