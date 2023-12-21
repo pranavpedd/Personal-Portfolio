@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +10,133 @@
       font-family: 'CircularStd-Book';
       src: url('fonts/CircularStd-Book.woff') format('woff');
     }
-    
+
+    @font-face {
+      font-family: 'CircularStd-Black';
+      src: url('fonts/CircularStd-Black.woff') format('woff');
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     body {
       background-color: rgb(33, 37, 43);
+    }
+
+    #main-page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 150px;
     }
 
     #intro {
       color: white;
       font-family: 'CircularStd-Book';
-      font-size: 50px;
+      font-size: 70px;
+      margin-right: 100px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: blink 1s step-end infinite;
     }
 
     #headshot {
-      height: 400px;
-      border: solid 3px white;
+      height: 500px;
+      border: solid 6px white;
       border-radius: 3%;
-      margin-left: 58%;
-      margin-top: 8%;
+    }
+
+    #aspire {
+      font-size: 20px;
+      font-family: 'CircularStd-Book';
+      color: grey;
+      margin-right: 100px;
+      margin-top: 0px;
+      opacity: 0;
+      transform: translateY(100px);
+      animation: fadeInUp 2s forwards;
+    }
+
+    #text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background: rgb(33, 37, 43);
+      padding: 20px 0;
+    }
+
+    #nav-links li {
+      padding: 0 20px;
+    }
+
+    #nav-links a {
+      text-decoration: none;
+      color: white;
+      font-family: 'CircularStd-Black';
+    }
+
+    #nav-links a:hover {
+      color: rgb(66, 96, 238);
+    }
+
+    #navigation {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
   </style>
 </head>
+
 <body>
-  <h1 id="intro">hey i'm pranav!</h1>
-  <img id="headshot" src="/images/headshot better.jpg" alt="pic of me">
+  <div id="navigation">
+    <ul id="nav-links">
+      <li id="home"><a href="/">Home</a></li>
+      <li id="about"><a href="/about">About</a></li>
+      <li id="work"><a href="/work">Work</a></li>
+      <li id="contact"><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div id="main-page">
+    <div id="text-group">
+      <h1 id="intro"></h1>
+      <h4 id="aspire">Aspiring Software Engineer/Data Scientist</h4>
+    </div>
+    <img id="headshot" src="/images/headshot better.jpg" alt="pic of me">
+  </div>
+  <script>
+    const text = "hey i'm pranav!";
+    const elem = document.getElementById('intro');
+    let idx = 0;
+    function animate() {
+      if (idx < text.length) {
+        elem.innerHTML += text.charAt(idx);
+        idx++;
+        setTimeout(animate, 90);
+      }
+    }
+
+    animate();
+  </script>
 </body>
+
 </html>
