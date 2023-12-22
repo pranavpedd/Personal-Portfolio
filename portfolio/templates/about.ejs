@@ -16,6 +16,11 @@
       src: url('fonts/CircularStd-Black.woff') format('woff');
     }
 
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
     body {
       background-color: rgb(33, 37, 43);
     }
@@ -63,10 +68,48 @@
       margin-left: 30px;
     }
 
-    #intro {
+    #about-me {
+      text-align: center;
+      padding: 20px;
+      margin-right: 50%;
+    }
+
+    .label {
       font-family: 'CircularStd-Book';
       color: white;
-      font-size: 40px;
+      font-size: 60px;
+      margin-bottom: 0.5em;
+      animation: fadeIn 2s;
+    }
+
+    .bio {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 10px;
+      color: grey;
+      font-family: 'CircularStd-Book';
+      font-size: 25px;
+      animation: fadeIn 3s;
+    }
+
+    #passions {
+      text-align: center;
+      padding: 20px;
+      margin-left: 35%;
+    }
+
+    #office-building {
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      z-index: 10;
+    }
+
+    #office {
+      width: 100px;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
@@ -82,8 +125,15 @@
   </div>
   <div id="main-page">
     <div id="about-me">
-      <h1 id="intro">about me</h1>
-
+      <h1 class="label">about me</h1>
+      <p class="bio">I am a junior studying computer science and statistics + data science at the University of Maryland, College Park.</p>
+    </div>
+    <!-- <div id="office-building">
+      <img id="office" src="/images/blue office.png" alt="office-building">
+    </div> -->
+    <div id="passions">
+      <h1 class="label">career aspirations</h1>
+      <p class="bio">I am a developer looking to apply honed skills in both fields of Software Engineering and/or Data Science.</p>
     </div>
   </div>
 </body>
