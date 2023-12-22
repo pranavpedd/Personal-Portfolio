@@ -17,8 +17,13 @@
     }
 
     @keyframes fadeIn {
-      0% {opacity: 0;}
-      100% {opacity: 1;}
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
 
     body {
@@ -64,14 +69,24 @@
     }
 
     #main-page {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       margin-top: 90px;
-      margin-left: 30px;
+      padding: 0 30px;
+    }
+
+    #about-me, #passions {
+      flex: 1;
+      padding: 20px;
+      margin: 0;
+      text-align: left;
     }
 
     #about-me {
       text-align: center;
       padding: 20px;
-      margin-right: 50%;
     }
 
     .label {
@@ -96,20 +111,20 @@
     #passions {
       text-align: center;
       padding: 20px;
-      margin-left: 35%;
     }
 
     #office-building {
-      position: absolute;
-      top: 50%;
-      right: 30px;
-      z-index: 10;
+      flex: 0 0 auto;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #office {
-      width: 100px;
+      width: 100%;
       height: auto;
-      display: block;
     }
   </style>
 </head>
@@ -125,15 +140,17 @@
   </div>
   <div id="main-page">
     <div id="about-me">
-      <h1 class="label">about me</h1>
-      <p class="bio">I am a junior studying computer science and statistics + data science at the University of Maryland, College Park.</p>
+      <h1 class="label">// about me</h1>
+      <p class="bio">I am a junior studying computer science and statistics + data science at the University of
+        Maryland, College Park.</p>
     </div>
-    <!-- <div id="office-building">
+    <div id="office-building">
       <img id="office" src="/images/blue office.png" alt="office-building">
-    </div> -->
+    </div>
     <div id="passions">
-      <h1 class="label">career aspirations</h1>
-      <p class="bio">I am a developer looking to apply honed skills in both fields of Software Engineering and/or Data Science.</p>
+      <h1 class="label">// career aspirations</h1>
+      <p class="bio">I am a full stack developer looking to apply honed skills in both fields of Software Engineering
+        and/or Data Science.</p>
     </div>
   </div>
 </body>

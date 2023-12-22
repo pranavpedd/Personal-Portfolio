@@ -1,4 +1,4 @@
-// imports & initial setup
+// imports
 const bodyParser = require('body-parser');
 const express = require('express');
 const path = require('path');
@@ -10,12 +10,12 @@ const app = express();
 process.stdin.setEncoding('utf-8');
 const port = process.argv[2];
 
-// setting directory of ejs pages
+// setting directories and ejs templates
 app.set('views', path.resolve(__dirname, 'templates'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
-app.use(favicon(path.join(__dirname, 'public/images', 'golden p.png')));
+app.use(favicon(path.join(__dirname, 'public/images', 'paint p.png')));
 
 // rendering pages
 app.get('/', (req, res) => {
@@ -34,6 +34,7 @@ app.get('/contact', (req, res) => {
   res.render('contact');
 });
 
+// starting server on port
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
