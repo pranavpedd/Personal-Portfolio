@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/4e5eafa9b9.js" crossorigin="anonymous"></script>
   <title>Pranav Peddamalla | Contact</title>
   <style>
     @font-face {
@@ -16,8 +17,18 @@
       src: url('fonts/CircularStd-Black.woff') format('woff');
     }
 
+    html,
     body {
-      background-color: rgb(33, 37, 43);
+      overflow: hidden;
+    }
+
+    body {
+      background-color: rgb(32, 32, 32);
+    }
+
+    .main-page {
+      text-align: center;
+      align-items: center;
     }
 
     #nav-links {
@@ -26,7 +37,7 @@
       padding: 0;
       display: flex;
       justify-content: center;
-      background: rgb(33, 37, 43);
+      background: rgb(32, 32, 32);
       padding: 20px 0;
     }
 
@@ -52,15 +63,86 @@
       z-index: 1000;
     }
 
-    #title {
-      color: white;
-      font-family: 'CircularStd-Black';
-      font-size: 70px;
+    #footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
 
-    #main-page {
+    #copyright {
+      font-family: 'CircularStd-Book';
+      color: grey;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    #title {
+      color: white;
+      font-size: 70px;
+      font-family: 'CircularStd-Book';
+      text-align: center;
       margin-top: 90px;
-      margin-left: 30px;
+      align-items: center;
+    }
+
+    .card {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: rgb(43, 43, 43);
+      border-radius: 20px;
+      margin: 0 10px;
+      width: fit-content;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* .card:hover~.card,
+    .card:hover~.card~.card,
+    .card:hover~.card~.card~.card,
+    .card:hover~.card~.card~.card~.card,
+    .row .card:not(:hover) {
+      opacity: 0.6;
+    } */
+
+    .card i {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      color: white;
+      font-size: 200px;
+    }
+
+    .card a {
+      text-decoration: none;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      padding: 15px 0;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+      z-index: 10;
+    }
+
+    #linkedin {
+      color: rgb(9, 102, 194);
+    }
+
+    #github {
+      color: rgb(13, 16, 23);
+    }
+
+    #instagram {
+      color: #D930F3;
+    }
+
+    #email {
+      color: #30944A;
     }
   </style>
 </head>
@@ -73,6 +155,38 @@
       <li id="work"><a href="/work">Work</a></li>
       <li id="contact"><a href="/contact">Contact</a></li>
     </ul>
+  </div>
+  <div class="main-page">
+    <h1 id="title">contact me!</h1>
+    <div class="row">
+      <div class="column">
+        <div class="card" id="email">
+          <a href="mailto:pranavpedd@gmail.com">
+            <i class="fa-solid fa-envelope" id="email"></i>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.linkedin.com/in/pranavpedd/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin" id="linkedin"></i>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://github.com/pranavpedd" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github" id="github"></i>
+          </a>
+        </div>
+        <div class="card">
+          <a href="https://www.instagram.com/pranavpedd/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram" id="instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <footer>
+      <p id="copyright">Copyright © Pranav Peddamalla</p>
+    </footer>
   </div>
 </body>
 

@@ -28,12 +28,14 @@
       }
     }
 
-    /* html, body {
-      overflow: hidden;
-    } */
-
     body {
-      background-color: rgb(33, 37, 43);
+      background-color: rgb(32, 32, 32);
+    }
+
+    .main.visible {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
     }
 
     #nav-links {
@@ -42,7 +44,7 @@
       padding: 0;
       display: flex;
       justify-content: center;
-      background: rgb(33, 37, 43);
+      background: rgb(32, 32, 32);
       padding: 20px 0;
     }
 
@@ -83,7 +85,9 @@
       padding: 0 30px;
     }
 
-    #about-me, #passions, #skills {
+    #about-me,
+    #passions,
+    #skills {
       flex: 1;
       padding: 20px;
       margin: 0;
@@ -126,22 +130,7 @@
       padding: 20px;
     }
 
-    #office-building {
-      flex: 0 0 auto;
-      width: 200px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #office {
-      width: 100%;
-      height: auto;
-    }
-
     #footer {
-      position: absolute;
       bottom: 0;
       width: 100%;
     }
@@ -151,6 +140,61 @@
       color: grey;
       text-align: center;
       font-size: 12px;
+    }
+
+    #hobbies {
+      text-align: center;
+    }
+
+    #hobby-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: start;
+      gap: 20px;
+      padding-left: 110px;
+    }
+
+    #left,
+    #right {
+      display: contents;
+    }
+
+    .items {
+      color: grey;
+      font-family: 'CircularStd-Book';
+      padding: 0;
+      margin: 0;
+      font-size: 25px;
+      text-align: left;
+      animation: fadeIn 3s;
+    }
+
+    .items li {
+      margin-bottom: 10px;
+    }
+
+    .card {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: rgb(43, 43, 43);
+      border-radius: 20px;
+      margin: 0 5px;
+      width: fit-content;
+    }
+
+    .card i {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      color: white;
+      font-size: 60px;
+    }
+
+    .row {
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -179,10 +223,110 @@
       <p class="bio">I am a full stack developer looking to apply honed skills in both fields of Software Engineering
         and/or Data Science.</p>
     </div>
+    <div id="hobbies">
+      <h1 class="label">
+        <i class="fa-solid fa-icons"></i>hobbies
+      </h1>
+      <div id="hobby-list">
+        <div id="left">
+          <ul class="items">
+            <li>Listening to music</li>
+            <li>Going to the gym</li>
+            <li>Traveling</li>
+          </ul>
+        </div>
+        <div id="right">
+          <ul class="items">
+            <li>Playing sports</li>
+            <li>Hanging out with friends</li>
+            <li>Watching TV</li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div id="skills">
       <h1 class="label">
         <i class="fa-solid fa-code"></i> technologies
       </h1>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <i class="devicon-python-plain colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-java-plain colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-javascript-plain colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-c-plain colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-html5-plain colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-css3-plain colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-ocaml-plain colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-ruby-plain colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-rust-plain"></i>
+          </div>
+          <!-- <div class="card">
+            <i class="devicon-r-original colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-matlab-plain colored"></i>
+          </div> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <i class="devicon-nodejs-plain-wordmark colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-react-original colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-express-original"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-numpy-original-wordmark colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-pandas-original-wordmark"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-tensorflow-original colored"></i>
+          </div>
+          <div class="card">
+            <i class="devicon-opencv-plain colored"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card">
+          <i class="devicon-mongodb-plain colored"></i>
+        </div>
+        <div class="card">
+          <i class="devicon-git-plain colored"></i>
+        </div>
+        <div class="card">
+            <i class="devicon-azure-plain colored"></i>
+        </div>
+        <div class="card">
+            <i class="devicon-amazonwebservices-original colored"></i>
+        </div>
+        <div class="card">
+            <i class="devicon-jupyter-plain colored"></i>
+        </div>
+      </div>
     </div>
   </div>
   <div id="footer">
