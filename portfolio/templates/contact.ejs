@@ -17,6 +17,16 @@
       src: url('fonts/CircularStd-Black.woff') format('woff');
     }
 
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
     html,
     body {
       overflow: hidden;
@@ -29,6 +39,7 @@
     .main-page {
       text-align: center;
       align-items: center;
+      animation: fadeIn 2s;
     }
 
     #nav-links {
@@ -71,13 +82,13 @@
 
     #copyright {
       font-family: 'CircularStd-Book';
-      color: grey;
+      color: #495057;
       text-align: center;
       font-size: 12px;
     }
 
     #title {
-      color: white;
+      color: #F0F1F3;
       font-size: 70px;
       font-family: 'CircularStd-Book';
       text-align: center;
@@ -97,19 +108,10 @@
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    /* .card:hover~.card,
-    .card:hover~.card~.card,
-    .card:hover~.card~.card~.card,
-    .card:hover~.card~.card~.card~.card,
-    .row .card:not(:hover) {
-      opacity: 0.6;
-    } */
-
     .card i {
       display: block;
-      max-width: 100%;
+      width: 200px;
       height: auto;
-      color: white;
       font-size: 200px;
     }
 
@@ -157,7 +159,7 @@
     </ul>
   </div>
   <div class="main-page">
-    <h1 id="title">contact me!</h1>
+    <h1 id="title">reach out</h1>
     <div class="row">
       <div class="column">
         <div class="card" id="email">
@@ -185,7 +187,7 @@
   </div>
   <div id="footer">
     <footer>
-      <p id="copyright">Copyright © Pranav Peddamalla</p>
+      <p id="copyright">© 2023 Pranav Peddamalla</p>
     </footer>
   </div>
 </body>

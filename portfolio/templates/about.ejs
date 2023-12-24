@@ -32,12 +32,6 @@
       background-color: rgb(32, 32, 32);
     }
 
-    .main.visible {
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
-    }
-
     #nav-links {
       list-style: none;
       margin: 0;
@@ -70,19 +64,19 @@
       z-index: 1000;
     }
 
-    #title {
-      color: white;
-      font-family: 'CircularStd-Black';
-      font-size: 70px;
-    }
-
     #main-page {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      margin-top: 90px;
+      margin-top: 55px;
       padding: 0 30px;
+    }
+
+    #aboutCareer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
     }
 
     #about-me,
@@ -94,17 +88,16 @@
       text-align: center;
     }
 
-    #about-me {
-      text-align: center;
-      padding: 20px;
+    #skills {
+      margin-top: -50px;
     }
 
     .label {
       font-family: 'CircularStd-Book';
-      color: white;
-      font-size: 60px;
+      color: #F0F1F3;
+      font-size: 50px;
       margin-bottom: 0.5em;
-      animation: fadeIn 2s;
+      animation: fadeIn 1s;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -121,8 +114,8 @@
       padding: 0 10px;
       color: grey;
       font-family: 'CircularStd-Book';
-      font-size: 25px;
-      animation: fadeIn 3s;
+      font-size: 20px;
+      animation: fadeIn 2s;
     }
 
     #passions {
@@ -137,57 +130,26 @@
 
     #copyright {
       font-family: 'CircularStd-Book';
-      color: grey;
+      color: #495057;
       text-align: center;
       font-size: 12px;
     }
 
-    #hobbies {
-      text-align: center;
-    }
-
-    #hobby-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      justify-content: center;
-      align-items: start;
-      gap: 20px;
-      padding-left: 110px;
-    }
-
-    #left,
-    #right {
-      display: contents;
-    }
-
-    .items {
-      color: grey;
-      font-family: 'CircularStd-Book';
-      padding: 0;
-      margin: 0;
-      font-size: 25px;
-      text-align: left;
-      animation: fadeIn 3s;
-    }
-
-    .items li {
-      margin-bottom: 10px;
-    }
-
     .card {
       display: inline-flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       padding: 20px;
       background-color: rgb(43, 43, 43);
       border-radius: 20px;
       margin: 0 5px;
-      width: fit-content;
+      width: 70px;
+      height: 70px;
     }
 
     .card i {
       display: block;
-      max-width: 100%;
+      width: 100%;
       height: auto;
       color: white;
       font-size: 60px;
@@ -195,6 +157,14 @@
 
     .row {
       margin-bottom: 20px;
+      animation: fadeIn 2s;
+    }
+
+    .caption {
+      color: white;
+      font-family: 'CircularStd-Book';
+      text-align: center;
+      font-size: 11px;
     }
   </style>
 </head>
@@ -209,39 +179,20 @@
     </ul>
   </div>
   <div id="main-page">
-    <div id="about-me">
-      <h1 class="label">
-        <i class="fa-solid fa-pen-to-square"></i>about me
-      </h1>
-      <p class="bio">I am a junior studying computer science and statistics + data science at the University of
-        Maryland, College Park.</p>
-    </div>
-    <div id="passions">
-      <h1 class="label">
-        <i class="fa-solid fa-briefcase"></i>career aspirations
-      </h1>
-      <p class="bio">I am a full stack developer looking to apply honed skills in both fields of Software Engineering
-        and/or Data Science.</p>
-    </div>
-    <div id="hobbies">
-      <h1 class="label">
-        <i class="fa-solid fa-icons"></i>hobbies
-      </h1>
-      <div id="hobby-list">
-        <div id="left">
-          <ul class="items">
-            <li>Listening to music</li>
-            <li>Going to the gym</li>
-            <li>Traveling</li>
-          </ul>
-        </div>
-        <div id="right">
-          <ul class="items">
-            <li>Playing sports</li>
-            <li>Hanging out with friends</li>
-            <li>Watching TV</li>
-          </ul>
-        </div>
+    <div id="aboutCareer">
+      <div id="about-me">
+        <h1 class="label">
+          <i class="fa-solid fa-pen-to-square"></i>about me
+        </h1>
+        <p class="bio">I am a junior studying computer science and statistics + data science at the University of
+          Maryland, College Park.</p>
+      </div>
+      <div id="passions">
+        <h1 class="label">
+          <i class="fa-solid fa-building"></i>career aspirations
+        </h1>
+        <p class="bio">I am a full stack developer looking to apply honed skills in both fields of Software Engineering
+          and/or Data Science.</p>
       </div>
     </div>
     <div id="skills">
@@ -252,86 +203,127 @@
         <div class="column">
           <div class="card">
             <i class="devicon-python-plain colored"></i>
+            <p class="caption">Python</p>
           </div>
           <div class="card">
             <i class="devicon-java-plain colored"></i>
+            <p class="caption">Java</p>
           </div>
           <div class="card">
             <i class="devicon-javascript-plain colored"></i>
+            <p class="caption">JavaScript</p>
           </div>
           <div class="card">
             <i class="devicon-c-plain colored"></i>
+            <p class="caption">C, C#, C++</p>
           </div>
           <div class="card">
             <i class="devicon-html5-plain colored"></i>
+            <p class="caption">HTML</p>
           </div>
           <div class="card">
             <i class="devicon-css3-plain colored"></i>
+            <p class="caption">CSS</p>
           </div>
           <div class="card">
             <i class="devicon-ocaml-plain colored"></i>
+            <p class="caption">OCaml</p>
           </div>
           <div class="card">
             <i class="devicon-ruby-plain colored"></i>
+            <p class="caption">Ruby</p>
           </div>
           <div class="card">
             <i class="devicon-rust-plain"></i>
-          </div>
-          <!-- <div class="card">
-            <i class="devicon-r-original colored"></i>
+            <p class="caption">Rust</p>
           </div>
           <div class="card">
-            <i class="devicon-matlab-plain colored"></i>
-          </div> -->
+            <i class="devicon-r-original colored"></i>
+            <p class="caption">R</p>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="column">
           <div class="card">
-            <i class="devicon-nodejs-plain-wordmark colored"></i>
+            <i class="devicon-matlab-plain colored"></i>
+            <p class="caption">MATLAB</p>
+          </div>
+          <div class="card">
+            <i class="devicon-latex-original"></i>
+            <p class="caption">Latex</p>
+          </div>
+          <div class="card">
+            <i class="devicon-nodejs-plain colored"></i>
+            <p class="caption">Node.js</p>
           </div>
           <div class="card">
             <i class="devicon-react-original colored"></i>
+            <p class="caption">React.js</p>
           </div>
           <div class="card">
             <i class="devicon-express-original"></i>
+            <p class="caption">Express.js</p>
           </div>
           <div class="card">
-            <i class="devicon-numpy-original-wordmark colored"></i>
+            <i class="devicon-numpy-original colored"></i>
+            <p class="caption">NumPy</p>
           </div>
           <div class="card">
-            <i class="devicon-pandas-original-wordmark"></i>
+            <i class="devicon-pandas-original"></i>
+            <p class="caption">Pandas</p>
           </div>
           <div class="card">
             <i class="devicon-tensorflow-original colored"></i>
+            <p class="caption">TensorFlow</p>
           </div>
           <div class="card">
             <i class="devicon-opencv-plain colored"></i>
+            <p class="caption">OpenCV</p>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="card">
-          <i class="devicon-mongodb-plain colored"></i>
-        </div>
-        <div class="card">
-          <i class="devicon-git-plain colored"></i>
-        </div>
-        <div class="card">
-            <i class="devicon-azure-plain colored"></i>
-        </div>
-        <div class="card">
-            <i class="devicon-amazonwebservices-original colored"></i>
-        </div>
-        <div class="card">
-            <i class="devicon-jupyter-plain colored"></i>
+        <div class="column">
+          <div class="card">
+            <i class="devicon-unix-original colored"></i>
+            <p class="caption">Unix</p>
+          </div>
+          <div class="card">
+            <i class="devicon-mongodb-plain colored"></i>
+            <p class="caption">MongoDB</p>
+          </div>
+          <div class="card">
+            <i class="devicon-git-plain colored"></i>
+            <p class="caption">Git</p>
+          </div>
+          <div class="card">
+              <i class="devicon-azure-plain colored"></i>
+              <p class="caption">Azure</p>
+          </div>
+          <div class="card">
+              <i class="devicon-amazonwebservices-original colored"></i>
+              <p class="caption">AWS</p>
+          </div>
+          <div class="card">
+              <i class="devicon-jupyter-plain colored"></i>
+              <p class="caption">Jupyter</p>
+          </div>
+          <div class="card">
+              <i class="devicon-anaconda-original colored"></i>
+              <p class="caption">Anaconda</p>
+          </div>
+          <div class="card">
+            <i class="devicon-mysql-plain colored"></i>
+            <p class="caption">MySQL</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div id="footer">
     <footer>
-      <p id="copyright">Copyright © Pranav Peddamalla</p>
+      <p id="copyright">© 2023 Pranav Peddamalla</p>
     </footer>
   </div>
 </body>
