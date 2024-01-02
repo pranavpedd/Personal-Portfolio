@@ -29,6 +29,11 @@
     }
   }
 
+  html,
+  body {
+    overflow: hidden;
+  }
+
   body {
     background-color: rgb(32, 32, 32);
   }
@@ -65,6 +70,27 @@
     z-index: 1000;
   }
 
+  #main-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 1.5s;
+  }
+
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #copyright {
+    font-family: 'CircularStd-Book';
+    color: #495057;
+    text-align: center;
+    font-size: 12px;
+  }
+
   #title {
     color: #F0F1F3;
     font-size: 70px;
@@ -85,14 +111,15 @@
   }
 
   .card {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     background-color: rgb(43, 43, 43);
     border-radius: 20px;
-    height: auto;
-    width: 300px;
+    min-height: 220px;
+    width: 310px;
     padding: 10px;
     align-items: center;
+    margin: 10px;
   }
 
   .card a {
@@ -105,7 +132,9 @@
 
   .project-name {
     color: white;
-    font-family: 'CircularStd-Book';
+    font-family: 'CircularStd-Black';
+    font-size: 30px;
+    text-align: center;
   }
 
   .description {
@@ -137,24 +166,70 @@
     </ul>
   </div>
   <div id="main-page">
-    <h1 id="title">my projects</h1>
-    <p id="bio">Here are some of my notable projects along with their implementations/demo</p>
+    <h1 id="title">projects</h1>
+    <p id="bio">Here are some of my notable projects along with their implementations/demos</p>
     <div class="row">
       <div class="column">
         <div class="card">
           <h2 class="project-name">SpotRecs</h2>
-          <p class="description">Website that allows users to view song reccomendations based on their Spotify profile</p>
+          <p class="description">Website that allows users to view song reccomendations based on their Spotify profile
+          </p>
           <div class="demos">
-            <a href="https://github.com/pranavpedd/SpotRecs">
+            <a href="https://github.com/pranavpedd/SpotRecs" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-square-github"></i>
             </a>
-            <a href="https://www.youtube.com/watch?v=QhOKPfjv9sw">
+            <a href="https://www.youtube.com/watch?v=QhOKPfjv9sw" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="project-name">DivyUp</h2>
+          <p class="description">Web app which streamlines group expense splitting by using Optical Character
+            Recognition on uploaded receipt images</p>
+          <div class="demos">
+            <a href="https://github.com/pranavpedd/DivyUp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-square-github"></i>
+            </a>
+            <a href="https://youtu.be/Htz9ky2HFhY?si=SqbYMekj91DXxBQk" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-youtube"></i>
             </a>
           </div>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <h2 class="project-name">Stock Price Predictor</h2>
+          <p class="description">Data Science project leveraging LSTM modeling to predict S&P 500 stock prices using
+            company-specific data</p>
+          <div class="demos">
+            <a href="https://github.com/pranavpedd/pranavpedd.github.io" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-square-github"></i>
+            </a>
+            <a href="https://pranavpedd.github.io/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-safari"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h2 class="project-name">Portfolio</h2>
+          <p class="description">My personal portfolio which is a showcase of my technical skills, personal projects and
+            work experience</p>
+          <div class="demos">
+            <a href="https://github.com/pranavpedd/Personal-Portfolio" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-square-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <footer>
+      <p id="copyright">© 2023 Pranav Peddamalla</p>
+    </footer>
   </div>
 </body>
 
