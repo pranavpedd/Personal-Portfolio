@@ -27,7 +27,8 @@
       }
     }
 
-    html, body {
+    html,
+    body {
       overflow: hidden;
     }
 
@@ -119,11 +120,26 @@
       width: 30%;
     }
 
+    .card.active {
+      background-color: mediumpurple;
+    }
+
+    .job-description {
+      font-family: 'CircularStd-Book';
+      color: white;
+      animation: fadeIn 1.5s;
+      font-size: 20px;
+    }
+
     .content {
       padding: 20px 30px;
       background-color: rgb(43, 43, 43);
       position: relative;
       border-radius: 10px;
+    }
+
+    .content:hover {
+      cursor: pointer;
     }
   </style>
 </head>
@@ -142,14 +158,14 @@
     <h1 id="title">work experience</h1>
     <div id="timeline">
       <div class="card">
-        <div class="content">
+        <div class="content" data-job-id="oshkosh">
           <h2 class="company">Oshkosh Corporation</h2>
           <p class="time-period">
             <i class="fa-regular fa-clock"></i> May 2023 ~
           </p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-job-id="varsity tutors">
         <div class="content">
           <h2 class="company">Varsity Tutors</h2>
           <p class="time-period">
@@ -157,7 +173,7 @@
           </p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-job-id="university of maryland">
         <div class="content">
           <h2 class="company">University of Maryland</h2>
           <p class="time-period">
@@ -166,12 +182,58 @@
         </div>
       </div>
     </div>
+    <div id="job-description" class="job-description">
+
+    </div>
   </div>
   <div id="footer">
     <footer>
       <p id="copyright">© 2023 Pranav Peddamalla</p>
     </footer>
   </div>
+  <script>
+    const jobDescriptions = {
+      'oshkosh': {
+        title: 'Data Science Intern @ Oshkosh Corporation',
+        description: [
+          'Leveraged Azure Synapse alongside Power BI to create a data validation tool, achieving a 40% boost in data integrity analysis efficiency and enabling advanced trend visualizations using Power BI for improved decision-making',
+          'Developed advanced 3D visualization tools using Python, rectPack, Pandas, and Matplotlib for the Next Generation Delivery Vehicle project, optimizing the arrangement of 1500+ components, resulting in a 30% improvement in packing efficiency and a 25% increase in resource utilization',
+          'Developed an advanced algorithm that processed 6,000+ engineering drawings, achieving 95% accuracy in boundary detection and efficient dimension extraction, reducing manual review time by 70% and enhancing design process efficiency'
+        ]
+      },
+
+      'varsity tutors': {
+        title: 'Computer Science + Math Tutor @ Varsity Tutors',
+        description: [
+          "Elevated 100+ students’ computer science and math grades through remote tutoring, attaining a GPA of 3.8+",
+          'Enhanced critical thinking and problem-solving skills of 100+ students, achieving a 92% exam success rate',
+          'Increased academic proficiency by 30% in subjects, including computer science, mathematics, science, and statistics'
+        ]
+      },
+
+      'university of maryland': {
+        title: 'Undergraduate Research Assistant @ UMD',
+        description: [
+          'Engineered machine learning algorithms using Python, leveraging OpenCV for image processing and NumPy for numerical computation resulting in computer vision capabilities for drones improving target detection by 40% and data processing speeds by 25%',
+          'Analyzed the performance of two quantum circuits on the Traveling Salesman Problem, using simulation techniques that resulted in a 20% improvement in circuit efficiency and a 30% reduction in problem-solving time, demonstrating the practical viability of quantum computing for optimization issues'
+        ]
+      }
+    };
+
+    function setActiveCard(cardElement, cardId) {
+      document.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('active');
+      });
+
+      cardElement.classList.add('active');
+    }
+
+    function updateJobDescription(cardId) {
+      const title = jobDescriptions[cardId].title;
+      const desc = jobDescriptions[cardId].description;
+      document.get
+    }
+  </script>
 </body>
 
 </html>
