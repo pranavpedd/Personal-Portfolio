@@ -69,6 +69,8 @@
     }
 
     #main-page {
+      position: relative;
+      min-height: 100vh;
       animation: fadeIn 1.5s;
     }
 
@@ -120,15 +122,23 @@
       width: 30%;
     }
 
-    .card.active {
-      background-color: mediumpurple;
+    .card .content {
+      transition: background-color 0.3s;
     }
 
-    .job-description {
+    .card .content.active {
+      background-color: rgb(66, 96, 238);
+    }
+
+    #job-description {
+      position: absolute;
       font-family: 'CircularStd-Book';
       color: white;
       animation: fadeIn 1.5s;
-      font-size: 20px;
+      font-size: 23px;
+      box-sizing: border-box;
+      top: 15%;
+      left: 42%;
     }
 
     .content {
@@ -165,16 +175,16 @@
           </p>
         </div>
       </div>
-      <div class="card" data-job-id="varsity tutors">
-        <div class="content">
+      <div class="card">
+        <div class="content" data-job-id="varsity">
           <h2 class="company">Varsity Tutors</h2>
           <p class="time-period">
             <i class="fa-regular fa-clock"></i> July 2022 ~
           </p>
         </div>
       </div>
-      <div class="card" data-job-id="university of maryland">
-        <div class="content">
+      <div class="card">
+        <div class="content" data-job-id="university">
           <h2 class="company">University of Maryland</h2>
           <p class="time-period">
             <i class="fa-regular fa-clock"></i> Aug 2021 ~ Dec 2022
@@ -202,8 +212,8 @@
         ]
       },
 
-      'varsity tutors': {
-        title: 'Computer Science + Math Tutor @ Varsity Tutors',
+      'varsity': {
+        title: 'CS + Math Tutor @ Varsity Tutors',
         description: [
           "Elevated 100+ students’ computer science and math grades through remote tutoring, attaining a GPA of 3.8+",
           'Enhanced critical thinking and problem-solving skills of 100+ students, achieving a 92% exam success rate',
@@ -211,7 +221,7 @@
         ]
       },
 
-      'university of maryland': {
+      'university': {
         title: 'Undergraduate Research Assistant @ UMD',
         description: [
           'Engineered machine learning algorithms using Python, leveraging OpenCV for image processing and NumPy for numerical computation resulting in computer vision capabilities for drones improving target detection by 40% and data processing speeds by 25%',
@@ -221,7 +231,7 @@
     };
 
     function setActiveCard(cardElement, cardId) {
-      document.querySelectorAll('.card').forEach(card => {
+      document.querySelectorAll('.content').forEach(card => {
         card.classList.remove('active');
       });
 
@@ -229,10 +239,41 @@
     }
 
     function updateJobDescription(cardId) {
-      const title = jobDescriptions[cardId].title;
-      const desc = jobDescriptions[cardId].description;
-      document.get
+      const job = jobDescriptions[cardId];
+      if (!job) {
+        console.error("No job found for card with id: ", cardId);
+        return;
+      }
+
+      const title = job.title;
+      const desc = job.description;
+      const descArea = document.getElementById('job-description');
+
+      descArea.innerHTML = '';
+
+      const header = document.createElement('h2');
+      header.textContent = title;
+      header.style.color = 'white';
+      header.style.fontFamily = 'CircularStd-Black';
+
+      const descriptionList = document.createElement('ul');
+      desc.forEach(description => {
+        const listItem = document.createElement('li');
+        listItem.textContent = description;
+        descriptionList.appendChild(listItem);
+      });
+
+      descArea.appendChild(header);
+      descArea.appendChild(descriptionList);
     }
+
+    document.querySelectorAll('.content').forEach(card => {
+      card.addEventListener('click', function () {
+        const cardId = card.dataset.jobId;
+        setActiveCard(card);
+        updateJobDescription(cardId);
+      });
+    });
   </script>
 </body>
 
