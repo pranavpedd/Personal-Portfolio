@@ -131,14 +131,21 @@
     }
 
     #job-description {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s;
       position: absolute;
       font-family: 'CircularStd-Book';
       color: white;
-      animation: fadeIn 1.5s;
       font-size: 23px;
       box-sizing: border-box;
       top: 15%;
       left: 42%;
+    }
+
+    #job-description.active {
+      display: block;
+      opacity: 1;
     }
 
     .content {
@@ -265,6 +272,16 @@
 
       descArea.appendChild(header);
       descArea.appendChild(descriptionList);
+      
+      descArea.style.display = 'none';
+      descArea.style.opacity = 0;
+
+      requestAnimationFrame(() => {
+        descArea.style.display = 'block';
+        setTimeout(() => {
+          descArea.style.opacity = 1;
+        }, 0);
+      });
     }
 
     document.querySelectorAll('.content').forEach(card => {

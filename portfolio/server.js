@@ -15,6 +15,7 @@ app.set('views', path.resolve(__dirname, 'templates'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
+app.use('/fonts', express.static(__dirname + '/fonts'));
 app.use(favicon(path.join(__dirname, 'public/images', 'paint p.png')));
 
 // rendering pages
